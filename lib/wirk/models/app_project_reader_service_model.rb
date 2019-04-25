@@ -11,10 +11,6 @@ module Wirk
 
     attr_accessor :credit
 
-    attr_accessor :has_instruction
-
-    attr_accessor :has_question_options
-
     attr_accessor :id_app
 
     attr_accessor :id_app_project
@@ -27,15 +23,11 @@ module Wirk
 
     attr_accessor :nb_total_task
 
-    attr_accessor :qualities
-
     attr_accessor :quality_name
 
     attr_accessor :question_options
 
     attr_accessor :title
-
-    attr_accessor :title_question_options
 
     attr_accessor :url_notification
 
@@ -51,10 +43,6 @@ module Wirk
         
         :'credit' => :'Credit',
         
-        :'has_instruction' => :'HasInstruction',
-        
-        :'has_question_options' => :'HasQuestionOptions',
-        
         :'id_app' => :'IdApp',
         
         :'id_app_project' => :'IdAppProject',
@@ -67,15 +55,11 @@ module Wirk
         
         :'nb_total_task' => :'NbTotalTask',
         
-        :'qualities' => :'Qualities',
-        
         :'quality_name' => :'QualityName',
         
         :'question_options' => :'QuestionOptions',
         
         :'title' => :'Title',
-        
-        :'title_question_options' => :'TitleQuestionOptions',
         
         :'url_notification' => :'UrlNotification'
         
@@ -86,22 +70,18 @@ module Wirk
     def self.swagger_types
       {
         :'app_name' => :'String',
-        :'app_project_state' => :'Integer',
+        :'app_project_state' => :'String',
         :'creation_date' => :'DateTime',
         :'credit' => :'Integer',
-        :'has_instruction' => :'BOOLEAN',
-        :'has_question_options' => :'BOOLEAN',
         :'id_app' => :'Integer',
         :'id_app_project' => :'Integer',
         :'id_quality' => :'Integer',
         :'instruction' => :'String',
         :'nb_task_closed' => :'Integer',
         :'nb_total_task' => :'Integer',
-        :'qualities' => :'Array<QualityReaderServiceModel>',
         :'quality_name' => :'String',
         :'question_options' => :'Array<String>',
         :'title' => :'String',
-        :'title_question_options' => :'String',
         :'url_notification' => :'String'
         
       }
@@ -130,14 +110,6 @@ module Wirk
         self.credit = attributes[:'Credit']
       end
       
-      if attributes[:'HasInstruction']
-        self.has_instruction = attributes[:'HasInstruction']
-      end
-      
-      if attributes[:'HasQuestionOptions']
-        self.has_question_options = attributes[:'HasQuestionOptions']
-      end
-      
       if attributes[:'IdApp']
         self.id_app = attributes[:'IdApp']
       end
@@ -162,12 +134,6 @@ module Wirk
         self.nb_total_task = attributes[:'NbTotalTask']
       end
       
-      if attributes[:'Qualities']
-        if (value = attributes[:'Qualities']).is_a?(Array)
-          self.qualities = value
-        end
-      end
-      
       if attributes[:'QualityName']
         self.quality_name = attributes[:'QualityName']
       end
@@ -180,10 +146,6 @@ module Wirk
       
       if attributes[:'Title']
         self.title = attributes[:'Title']
-      end
-      
-      if attributes[:'TitleQuestionOptions']
-        self.title_question_options = attributes[:'TitleQuestionOptions']
       end
       
       if attributes[:'UrlNotification']
@@ -200,19 +162,15 @@ module Wirk
           app_project_state == o.app_project_state &&
           creation_date == o.creation_date &&
           credit == o.credit &&
-          has_instruction == o.has_instruction &&
-          has_question_options == o.has_question_options &&
           id_app == o.id_app &&
           id_app_project == o.id_app_project &&
           id_quality == o.id_quality &&
           instruction == o.instruction &&
           nb_task_closed == o.nb_task_closed &&
           nb_total_task == o.nb_total_task &&
-          qualities == o.qualities &&
           quality_name == o.quality_name &&
           question_options == o.question_options &&
           title == o.title &&
-          title_question_options == o.title_question_options &&
           url_notification == o.url_notification
     end
 
@@ -223,7 +181,7 @@ module Wirk
 
     # Calculate hash code according to all attributes.
     def hash
-      [app_name, app_project_state, creation_date, credit, has_instruction, has_question_options, id_app, id_app_project, id_quality, instruction, nb_task_closed, nb_total_task, qualities, quality_name, question_options, title, title_question_options, url_notification].hash
+      [app_name, app_project_state, creation_date, credit, id_app, id_app_project, id_quality, instruction, nb_task_closed, nb_total_task, quality_name, question_options, title, url_notification].hash
     end
 
     # build the object from hash
